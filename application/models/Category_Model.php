@@ -11,14 +11,13 @@
  *
  * @author Lucas
  */
+require_once 'CategoryEntity.php';
 class Category_Model extends CSV_Model {
     //put your code here
-    public $categoryarray = array('CategoryId' => 'Rims');
     
     function __construct()
 	{
-            echo('Hello');
-            parent::__construct('../data/Category.csv', 'CategoryId', 'Name');
+            parent::__construct('../data/Category.csv', 'CategoryId', 'CategoryEntity');
         }
 
 }

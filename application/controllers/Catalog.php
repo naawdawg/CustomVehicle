@@ -14,6 +14,14 @@
 class Catalog extends Application {
        public function index() 
      {
-         $this->show('CategoryId');
+           $this->load->model('Category_Model');
+           $data = $this->Category_Model->all();
+           $newEntity = new CategoryEntity();
+           $newEntity->CategoryId = 123;
+           $newEntity->Name = "MY NEW CATEGORY";
+           $this->Category_Model->add($newEntity);
+           echo("<pre>");
+           print_r($data);
+           //$this->show('CategoryId');
      }
 }
