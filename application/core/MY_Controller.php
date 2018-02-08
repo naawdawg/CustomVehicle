@@ -20,7 +20,7 @@ class Application extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
-
+                $this->output->delete_cache();
 		//  Set basic view parameters
 		$this->data = array ();
 		$this->data['pagetitle'] = 'CodeIgniter3.1 Starter 2';

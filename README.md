@@ -21,3 +21,11 @@ Sessions have been enabled in this starter, using `/tmp` as the folder to store 
 Configure your web server or virtual host so that your project's
 document root maps to this **public** folder inside your project.
 
+Team Agreement
+-equally contribute 
+-collaborate
+-don't push to master
+-bring up questions 
+-remember to change the changelog
+-turn your gpg sign on
+
