@@ -23,7 +23,7 @@ class Application extends CI_Controller
 
 		//  Set basic view parameters
 		$this->data = array ();
-		$this->data['pagetitle'] = 'TODO List Manager';
+		$this->data['pagetitle'] = 'CodeIgniter3.1 Starter 2';
 		$this->data['ci_version'] = (ENVIRONMENT === 'development') ? 'CodeIgniter Version <strong>'.CI_VERSION.'</strong>' : '';
 	}
 
@@ -36,5 +36,17 @@ class Application extends CI_Controller
             $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
             $this->parser->parse('template', $this->data);
 	}
+        
+//        function show($key) {
+//            $this->data['pagebody'] = 'load_photo';
+//
+//            // build the list of authors, to pass on to our view
+//            $source = $this->quotes->get($key);
+//
+//            // pass on the data to present, adding the author record's fields
+//            $this->data = array_merge($this->data, (array) $source);
+//
+//            $this->render();
+//        }
 
 }

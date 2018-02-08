@@ -19,8 +19,7 @@ class Welcome extends Application
 	 */
 	public function index()
 	{
-		$this->data['pagebody'] = 'welcome_message';
-                echo('CategoryId');
+		$this->data['pagebody'] = 'index';
 		$this->render(); 
 	}
 
