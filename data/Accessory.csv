@@ -1,2 +1,7 @@
-AccessoryId," Description"," CategoryId"," Cost"," Popularity"," Quality"
-123,"An Accessory",123,100,90,50
+AccessoryId,Description,Category,Cost,Popularity,Quality
+1,White coloured car,1,5,3,8
+2,Black coloured car,1,8,9,10
+3,Red coloured car,1,8,6,8
+4,Single line rim,2,9,9,10
+5,Parallel line rim,2,6,7,8
+
