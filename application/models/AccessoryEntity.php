@@ -7,14 +7,18 @@
  */
 
 /**
- * Description of CategoryEntity
+ * Description of AccessoryEntity
  *
- * @author andraavram
+ * @author Lucas
  */
-class CategoryEntity extends Entity {
-    //put your code here
+require_once 'CategoryEntity.php';
+class AccessoryEntity extends CategoryEntity{
+    public $accessoryId;
+    public $description;
     public $categoryId;
-    public $name;
+
+
+    //put your code here
       function __construct(){
           parent::__construct();
       }

@@ -7,15 +7,10 @@
  */
 
 /**
- * Description of CategoryEntity
+ * Description of SetEntity
  *
- * @author andraavram
+ * @author Lucas
  */
-class CategoryEntity extends Entity {
+class SetEntity extends CategoryEntity {
     //put your code here
-    public $categoryId;
-    public $name;
-      function __construct(){
-          parent::__construct();
-      }
 }
