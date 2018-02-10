@@ -11,6 +11,30 @@
  *
  * @author Lucas
  */
-class SetEntity extends CategoryEntity {
+class SetEntity{
     //put your code here
+    public $setId;
+    public $name;
+    
+    public function __construct() {
+        
+    }
+
+    public function getSetId() {
+        return $this->setId;
+    }
+
+    public function getName() {
+        return $this->name;
+    }
+
+    public function setSetId($setId) {
+        $this->setId = $setId;
+    }
+
+    public function setName($name) {
+        $this->name = $name;
+    }
+
+
 }

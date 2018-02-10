@@ -29,6 +29,7 @@ class Info extends Application{
                         if(!strcasecmp($category->CategoryId, $key))
                         {
                             header("Content-type: application/json");
+                            //Printing JSON Object change as you need
                             echo json_encode($category);
                         }
                     }
@@ -36,6 +37,7 @@ class Info extends Application{
 		 else 
                  {
                     header("Content-type: application/json");
+                    //Printing JSON Object change as you need
                     echo json_encode($categories);
                  }
 	}
@@ -51,6 +53,7 @@ class Info extends Application{
                     if(!strcasecmp($accessory->AccessoryId, $key))
                     {
                         header("Content-type: application/json");
+                        //Printing JSON Object change as you need
                         echo json_encode($accessory);
                     }
                 }
@@ -58,12 +61,14 @@ class Info extends Application{
              else 
              {
                 header("Content-type: application/json");
+                //Printing JSON Object change as you need
                 echo json_encode($accessories);
              }
 	}
         // To run type into URL /info/catalog/(optional Set id)
 	public function bundle($key = null)
 	{
+            $this->load->model('Set_Model');
             $set = $this->Set_Model->all();
             if($key != null)
             {
@@ -72,6 +77,7 @@ class Info extends Application{
                     if(!strcasecmp($selectedset->SetId, $key))
                     {
                         header("Content-type: application/json");
+                        //Printing JSON Object change as you need
                         echo json_encode($selectedset);
                     }
                 }
@@ -79,6 +85,7 @@ class Info extends Application{
              else 
              {
                 header("Content-type: application/json");
+                //Printing JSON Object change as you need
                 echo json_encode($set);
              }
 	}
