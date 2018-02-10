@@ -7,13 +7,14 @@
  */
 
 /**
- * Description of Catalog
+ * Description of Set_Model
  *
  * @author Lucas
  */
-
-class Catalog extends Application {
-       public function index() 
-     {
-     }
+require_once 'SetEntity.php';
+class Set_Model extends CSV_Model {
+       function __construct()
+	{
+            parent::__construct('../data/Set.csv', 'SetId', 'SetEntity');
+        }
 }
