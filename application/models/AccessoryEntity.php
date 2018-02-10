@@ -13,13 +13,37 @@
  */
 require_once 'CategoryEntity.php';
 class AccessoryEntity extends CategoryEntity{
-    public $accessoryId;
+//    public $accessoryId;
     public $description;
     public $categoryId;
-
-
+    
     //put your code here
       function __construct(){
           parent::__construct();
       }
+//      public function getAccessoryId() {
+//          return $this->accessoryId;
+//      }
+
+     public function getDescription() {
+          return $this->description;
+      }
+//
+//      public function getCategoryId() {
+//          return parent::getCategoryId();
+//      }
+
+     public function setAccessoryId($accessoryId) {
+          $this->accessoryId = $accessoryId;
+      }
+
+     public function setDescription($description) {
+          $this->description = $description;
+      }
+
+     public function setCategoryId($categoryId) {
+          $this->categoryId = $categoryId;
+      }
+
+
 }

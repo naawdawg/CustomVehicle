@@ -17,6 +17,9 @@ class Accessory_Model extends CSV_Model {
         function __construct()
 	{
             parent::__construct('../data/Accessory.csv', 'AccessoryId', 'AccessoryEntity');
+//            $accessory = new AccessoryEntity();
+//            echo($accessory->getCategoryId());
+          
         }
     
     

@@ -11,11 +11,29 @@
  *
  * @author andraavram
  */
-class CategoryEntity extends Entity {
+  class CategoryEntity extends Entity {
     //put your code here
-    public $categoryId;
+    private $categoryId;
     public $name;
-      function __construct(){
-          parent::__construct();
-      }
+//
+//    function __construct(){
+//          parent::__construct();
+//    }
+//    
+//    public function getCategoryId() {
+//        return $this->categoryId;
+//    }
+//
+//    public function getName() {
+//        return $this->name;
+//    }
+//
+//    public function setCategoryId($categoryId) {
+//        $this->categoryId = $categoryId;
+//    }
+//
+//    public function setName($name) {
+//        $this->name = $name;
+//    }
+
 }

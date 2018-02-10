@@ -17,9 +17,16 @@ class Catalog extends Application {
            $this->load->model('Category_Model');
            $data = $this->Category_Model->all();
            //$newEntity = new CategoryEntity();
+           $array=$this->Category_Model->get('3');
+           print_r($array['CategoryId']);
+           
+           //save accessory id from the array
+          // $array2=$this->Accessory_Model->get(//accessoryid)
+                   
            //$newEntity->CategoryId = 123;
            //$newEntity->Name = "MY NEW CATEGORY";
            //$this->Category_Model->add($newEntity);
+       
            echo("<pre>");
            print_r($data);
            //$this->show('CategoryId');
