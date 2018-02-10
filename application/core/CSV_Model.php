@@ -24,10 +24,12 @@ class CSV_Model extends Memory_Model
 		parent::__construct();
 
 		// guess at persistent name if not specified
-		if ($origin == null)
+		if ($origin == null){
 			$this->_origin = get_class($this);
-		else
+                }
+		else{
 			$this->_origin = $origin;
+                }
 
 		// remember the other constructor fields
 		$this->_keyfield = $keyfield;
@@ -60,8 +62,9 @@ class CSV_Model extends Memory_Model
 				}
 				else
 				{
+
 					// build object from a row
-					$record = new $this->entity();
+					$record = new $this->_entity();
 					for ($i = 0; $i < count($this->_fields); $i ++ )
 						$record->{$this->_fields[$i]} = $data[$i];
 					$key = $record->{$this->_keyfield};
@@ -89,6 +92,7 @@ class CSV_Model extends Memory_Model
 			fputcsv($handle, $this->_fields);
 			foreach ($this->_data as $key => $record)
 				fputcsv($handle, array_values((array) $record));
+                        
 			fclose($handle);
 		}
 		// --------------------
