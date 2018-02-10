@@ -13,13 +13,13 @@
  */
   class CategoryEntity extends Entity {
     //put your code here
-    private $categoryId;
-    public $name;
-//
+    //public $categoryId;
+//    public  $name;
+////
 //    function __construct(){
-//          parent::__construct();
+//          parent::__construct();    
 //    }
-//    
+////    
 //    public function getCategoryId() {
 //        return $this->categoryId;
 //    }

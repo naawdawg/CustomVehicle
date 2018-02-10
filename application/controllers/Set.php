@@ -17,8 +17,6 @@ class Set extends Application {
            $this->load->model('Set_Model');
            $data = $this->Set_Model->all();
            $newEntity = new SetEntity();
-           $newEntity->SetId = 123;
-           $newEntity->Name = "MY NEW Set";
            $this->Set_Model->add($newEntity);
            echo("<pre>");
            print_r($data);

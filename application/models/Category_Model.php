@@ -14,10 +14,12 @@
 require_once 'CategoryEntity.php';
 class Category_Model extends CSV_Model {
     //put your code here
+    public $CategoryId;
+    public $Name;
     
     function __construct()
-	{
-            parent::__construct('../data/Category.csv', 'CategoryId', 'CategoryEntity');
-        }
+    {
+        parent::__construct('../data/Category.csv', 'CategoryId','CategoryEntity');
+    }
 
 }

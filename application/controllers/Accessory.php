@@ -17,7 +17,7 @@ class Accessory extends Application {
      {
            $this->load->model('Accessory_Model');
            $data = $this->Accessory_Model->all();
-           echo("<pre>");
+        echo("<pre>");
            print_r($data);
            //$this->show('CategoryId');
      }
