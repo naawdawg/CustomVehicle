@@ -13,27 +13,23 @@
  */
 class SetEntity{
     //put your code here
-    public $setId;
-    public $name;
+    public $SetId;
+    public $Name;
     
-    public function __construct() {
-        
-    }
-
     public function getSetId() {
-        return $this->setId;
+        return $this->SetId;
     }
 
     public function getName() {
-        return $this->name;
+        return $this->Name;
     }
 
     public function setSetId($setId) {
-        $this->setId = $setId;
+        $this->SetId = $setId;
     }
 
     public function setName($name) {
-        $this->name = $name;
+        $this->Name = $name;
     }
 
 

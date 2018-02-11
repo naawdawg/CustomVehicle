@@ -13,27 +13,24 @@
  */
   class CategoryEntity  {
    // put your code here
-    public $categoryId;
-    public  $name;
+    public $CategoryId;
+    public  $Name;
 //
-    function __construct(){
-          parent::__construct();    
-    }
 //    
     public function getCategoryId() {
-        return $this->categoryId;
+        return $this->CategoryId;
     }
 
     public function getName() {
-        return $this->name;
+        return $this->Name;
     }
 
     public function setCategoryId($categoryId) {
-        $this->categoryId = $categoryId;
+        $this->CategoryId = $categoryId;
     }
 
     public function setName($name) {
-        $this->name = $name;
+        $this->Name = $name;
     }
 
 }

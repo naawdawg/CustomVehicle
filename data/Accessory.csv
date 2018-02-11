@@ -1,4 +1,4 @@
-AccessoryId,Description,Category,Cost,Popularity,Quality
+AccessoryId,Description,CategoryId,Cost,Popularity,Quality
 1,"White coloured car",1,5,3,8
 2,"Black coloured car",1,8,9,10
 3,"Red coloured car",1,8,6,8

@@ -12,68 +12,60 @@
  * @author Lucas
  */
 class AccessoryEntity{ 
-    public $accessoryId;
-    public $description;
-    public $category;
-    public $cost;
-    public $popularity;
-    public $quality;
-    
-    
-    
-    public function __construct() {
-        
-    }
-
-    
+    public $AccessoryId;
+    public $Description;
+    public $CategoryId;
+    public $Cost;
+    public $Popularity;
+    public $Quality;
     
     
     public  function getAccessoryId() {
-        return $this->accessoryId;
+        return $this->AccessoryId;
     }
 
     public function getDescription() {
-        return $this->description;
+        return $this->Description;
     }
 
     public function getCategory() {
-        return $this->category;
+        return $this->CategoryId;
     }
 
     public function getCost() {
-        return $this->cost;
+        return $this->Cost;
     }
 
     public function getPopularity() {
-        return $this->popularity;
+        return $this->Popularity;
     }
 
     public function getQuality() {
-        return $this->quality;
+        return $this->Quality;
     }
 
     public function setAccessoryId($accessoryId) {
-        $this->accessoryId = $accessoryId;
+        $this->AccessoryId = $accessoryId;
     }
 
     public function setDescription($description) {
-        $this->description = $description;
+        $this->Description = $description;
     }
 
     public function setCategory($category) {
-        $this->category = $category;
+        $this->CategoryId = $category;
     }
 
     public function setCost($cost) {
-        $this->cost = $cost;
+        $this->Cost = $cost;
     }
 
     public function setPopularity($popularity) {
-        $this->popularity = $popularity;
+        $this->Popularity = $popularity;
     }
 
     public function setQuality($quality) {
-        $this->quality = $quality;
+        $this->Quality = $quality;
     }
 
 
