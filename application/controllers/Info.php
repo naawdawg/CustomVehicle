@@ -27,8 +27,14 @@ class Info extends Application {
     private function getResourceAsJson($model,$key = null) {
         $this->load->model($model);
         if ($key != null) {
-            $entity = $this->$model->get($key);
-            return json_encode($entity);
+            // Specific to ../info/bundleDetials/(SetId)
+            if ($model == "SetDetail_Model") {
+                $entity = $this->$model->some("SetId",$key);
+                return json_encode($entity);
+            } else {
+                $entity = $this->$model->get($key);
+                return json_encode($entity);
+            }
         } else {
             $entities = $this->$model->all();
             return json_encode($entities);
