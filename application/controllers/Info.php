@@ -11,82 +11,45 @@
  *
  * @author Lucas
  */
-class Info extends Application{
+class Info extends Application {
+
     //put your code here
-	public function index()
-	{
-		echo("This is an App For Accessorizing a car. ");
-	}
-	// To run type into URL /info/category/(optional category id)
-	public function category($key = null)
-	{
-                $this->load->model('Category_Model');
-		$categories = $this->Category_Model->all();
-		if($key != null)
-		{
-                    foreach($categories as $category)
-                    {
-                        if(!strcasecmp($category->CategoryId, $key))
-                        {
-                            header("Content-type: application/json");
-                            //Printing JSON Object change as you need
-                            echo json_encode($category);
-                        }
-                    }
-		}
-		 else 
-                 {
-                    header("Content-type: application/json");
-                    //Printing JSON Object change as you need
-                    echo json_encode($categories);
-                 }
-	}
+    public function index() {
+        echo("This is an App For Accessorizing a car. ");
+    }
+
+    // To run type into URL /info/category/(optional category id)
+    public function category($key = null) {
+        header("Content-type: application/json");
+        echo $this->getResourceAsJson("Category_Model", $key);
+    }
+    
+    private function getResourceAsJson($model,$key = null) {
+        $this->load->model($model);
+        if ($key != null) {
+            $entity = $this->$model->get($key);
+            return json_encode($entity);
+        } else {
+            $entities = $this->$model->all();
+            return json_encode($entities);
+        }        
+    }
+
         // To run type into URL /info/catalog/(optional AccessoryId)
-	public function catalog($key = null)
-	{
-            $this->load->model('Accessory_Model');
-            $accessories = $this->Accessory_Model->all();
-            if($key != null)
-            {
-                foreach($accessories as $accessory)
-                {
-                    if(!strcasecmp($accessory->AccessoryId, $key))
-                    {
-                        header("Content-type: application/json");
-                        //Printing JSON Object change as you need
-                        echo json_encode($accessory);
-                    }
-                }
-            }
-             else 
-             {
-                header("Content-type: application/json");
-                //Printing JSON Object change as you need
-                echo json_encode($accessories);
-             }
-	}
-        // To run type into URL /info/catalog/(optional Set id)
-	public function bundle($key = null)
-	{
-            $this->load->model('Set_Model');
-            $set = $this->Set_Model->all();
-            if($key != null)
-            {
-                foreach($set as $selectedset)
-                {
-                    if(!strcasecmp($selectedset->SetId, $key))
-                    {
-                        header("Content-type: application/json");
-                        //Printing JSON Object change as you need
-                        echo json_encode($selectedset);
-                    }
-                }
-            }
-             else 
-             {
-                header("Content-type: application/json");
-                //Printing JSON Object change as you need
-                echo json_encode($set);
-             }
-	}
+    public function catalog($key = null) {
+        header("Content-type: application/json");
+        echo $this->getResourceAsJson("Accessory_Model", $key);
+    }
+
+    // To run type into URL /info/catalog/(optional Set id)
+    public function bundle($key = null) {
+        header("Content-type: application/json");
+        echo $this->getResourceAsJson("Set_Model", $key);
+    }
+    
+    public function bundleDetail($key = null) {
+        header("Content-type: application/json");
+        echo $this->getResourceAsJson("SetDetail_Model", $key);
+    }
+
 }
