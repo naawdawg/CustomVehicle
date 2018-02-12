@@ -15,9 +15,5 @@
             <div class="navbar-inner">{menubar}</div>
         </div>
     </div>
-        {content}
-        <p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds.
-        {ci_version}</p>
-
     </body>
 </html>
