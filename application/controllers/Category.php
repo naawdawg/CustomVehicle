@@ -19,8 +19,25 @@ class Category extends Application
 	 */
 	public function index()
 	{
-		$this->data['pagebody'] = 'category';
-		$this->render(); 
+            $this->load->library('parser');
+            
+            
+                $this->load->model("Accessory_Model");
+                $bodyColour = $this->Accessory_Model->some("CategoryId",1);
+                $rim = $this->Accessory_Model->some("CategoryId",2);
+                $storage = $this->Accessory_Model->some("CategoryId",4);
+                $spoiler = $this->Accessory_Model->some("CategoryId",3);
+
+                
+                $data = [
+                    "bodyColours"=>$bodyColour, 
+                    "rims"=>$rim,
+                    "storages"=>$storage,
+                    "spoilers"=>$spoiler
+                ];
+                
+                $this->parser->parse('category', $data);
+                //$this->load->view('category', $data);
 	}
 
 }
