@@ -23,25 +23,20 @@ class Info extends Application {
         header("Content-type: application/json");
         echo $this->getResourceAsJson("Category_Model", $key);
     }
-    
-    private function getResourceAsJson($model,$key = null) {
+
+    private function getResourceAsJson($model, $key = null) {
         $this->load->model($model);
         if ($key != null) {
-            // Specific to ../info/bundleDetials/(SetId)
-            if ($model == "SetDetail_Model") {
-                $entity = $this->$model->some("SetId",$key);
-                return json_encode($entity);
-            } else {
-                $entity = $this->$model->get($key);
-                return json_encode($entity);
-            }
+
+            $entity = $this->$model->get($key);
+            return json_encode($entity);
         } else {
             $entities = $this->$model->all();
             return json_encode($entities);
-        }        
+        }
     }
 
-        // To run type into URL /info/catalog/(optional AccessoryId)
+    // To run type into URL /info/catalog/(optional AccessoryId)
     public function catalog($key = null) {
         header("Content-type: application/json");
         echo $this->getResourceAsJson("Accessory_Model", $key);
@@ -52,10 +47,18 @@ class Info extends Application {
         header("Content-type: application/json");
         echo $this->getResourceAsJson("Set_Model", $key);
     }
-    
+
     public function bundleDetail($key = null) {
         header("Content-type: application/json");
-        echo $this->getResourceAsJson("SetDetail_Model", $key);
+        $this->load->model("SetDetail_Model");
+        if ($key != null) {
+
+            $entity = $this->SetDetail_Model->some("SetId", $key);
+            echo json_encode($entity);
+        } else {
+            $entities = $this->SetDetail_Model->all();
+            echo json_encode($entities);
+        }
     }
 
 }
