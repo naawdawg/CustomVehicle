@@ -1,4 +1,7 @@
+
+
 <h1>Catalog</h1>
+
 
 <div id="body">
     <p>List of all accessories available</p>
