@@ -50,6 +50,19 @@ defined('FOPEN_READ_WRITE_CREATE_STRICT')       OR define('FOPEN_READ_WRITE_CREA
 
 /*
 |--------------------------------------------------------------------------
+| File User Roles
+|--------------------------------------------------------------------------
+|
+| These user roles will be used in a few places
+|
+*/
+
+defined('ROLE_GUEST') OR define('ROLE_GUEST', 'Guest');
+defined('ROLE_USER') OR define('ROLE_USER', 'User');
+defined('ROLE_ADMIN') OR define('ROLE_ADMIN', 'Admin');
+
+/*
+|--------------------------------------------------------------------------
 | Exit Status Codes
 |--------------------------------------------------------------------------
 |

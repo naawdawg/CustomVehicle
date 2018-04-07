@@ -20,24 +20,43 @@ class Category extends Application
 
     public function index()
     {
-
+        $result = '';
+        $role = $this->session->userdata('userrole');
+        $this->data['pagetitle'] = 'Catalogue ('. $role . ')';
         $this->load->library('parser');
-
         $this->load->model("Accessory_Model");
         $bodyColour = $this->Accessory_Model->some("CategoryId", 1);
         $rim        = $this->Accessory_Model->some("CategoryId", 2);
         $storage    = $this->Accessory_Model->some("CategoryId", 4);
         $spoiler    = $this->Accessory_Model->some("CategoryId", 3);
         $data = [
-        	"_menubar" => $this->config->item('menu_choices'),
+            "_menubar" => $this->config->item('menu_choices'),
             "bodyColours" => $bodyColour,
             "rims"        => $rim,
             "storages"    => $storage,
             "spoilers"    => $spoiler,
         ];
+        if ($role == ROLE_ADMIN)
+        {
+            $this->render2();
+            $result .= $this->parser->parse('category-admin', $data);
+        }
+        else if ($role == ROLE_USER)
+        {
+            $this->render2();
+            $result .= $this->parser->parse('category', $data);
+        }
+        else
+        {
+            $this->render2();
+            $result .= $this->parser->parse('category-guest', $data);
+        }
+        $this->data['pagebody'] = 'CatalogWeb';
+       	$this->data['display_tasks'] = $result;
+        // and then pass them on
         
-       		$this->render2(); 
-        $this->parser->parse('category', $data);
+        
+        //$this->parser->parse('category', $data);
         		//$this->data['category'] = $hello;
 
         //$this->render2();

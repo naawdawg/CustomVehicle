@@ -1,6 +1,6 @@
 
 
-<h1>Catalog - User</h1>
+<h1>Catalog - Admin</h1>
 
 
 <div id="body">
