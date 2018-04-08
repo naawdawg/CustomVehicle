@@ -62,5 +62,17 @@ class Category extends Application
         //$this->render2();
         //$this->load->view('category', $data);
     }
-
+    
+    
+    
+        public function edit($CategoryId = null)
+        {
+        if ($CategoryId == null)
+        {
+            redirect('/category');
+        }
+        $task = $this->tasks->get($CategoryId);
+        $this->session->set_userdata('task', $task);
+        $this->showit();
+        }
 }
