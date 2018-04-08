@@ -41,28 +41,7 @@ class Category extends Application
             "rims"        => $rims,
             "storages"    => $storages,
             "spoilers"    => $spoilers,
-        ];
-        
-
-        
-        /*
-        foreach($data as $value){
-            
-        }
-         * 
-         */
-        
-        //$data->A1 = $this->app->mapping(A1);
-        
-        /*
-        print "<pre>";
-        print_r($this->app);
-        $dataSample = $data['bodyColours'];
-        print_r($dataSample);
-        print "</pre>";
-         *
-         */
-        
+        ]; 
         
         if ($role == ROLE_ADMIN)
         {
