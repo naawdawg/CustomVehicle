@@ -1,4 +1,4 @@
-AccessoryId,Description,CategoryId,Cost,Popularity,Quality,Path
+AccessoryId,Description,CategoryId,A1,A2,A3,Path
 1,"White coloured car",1,5,3,8,/Images/car1.png
 2,"Black coloured car",1,8,9,10,/Images/car2.png
 3,"Red coloured car",1,8,6,8,/Images/car3.png
