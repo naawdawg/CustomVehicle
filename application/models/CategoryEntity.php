@@ -11,7 +11,7 @@
  *
  * @author andraavram
  */
-  class CategoryEntity  {
+  class CategoryEntity extends Entity  {
    // put your code here
     public $CategoryId;
     public  $Name;

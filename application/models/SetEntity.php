@@ -11,7 +11,7 @@
  *
  * @author Lucas
  */
-class SetEntity{
+class SetEntity extends Entity{
     //put your code here
     public $SetId;
     public $Name;

@@ -11,7 +11,7 @@
  *
  * @author andraavram
  */
-class SetDetailEntity {
+class SetDetailEntity extends Entity{
     //put your code here
     
     public $Id;
