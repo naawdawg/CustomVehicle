@@ -25,17 +25,45 @@ class Category extends Application
         $this->data['pagetitle'] = 'Catalogue ('. $role . ')';
         $this->load->library('parser');
         $this->load->model("Accessory_Model");
-        $bodyColour = $this->Accessory_Model->some("CategoryId", 1);
-        $rim        = $this->Accessory_Model->some("CategoryId", 2);
-        $storage    = $this->Accessory_Model->some("CategoryId", 4);
-        $spoiler    = $this->Accessory_Model->some("CategoryId", 3);
+        $bodyColours = $this->Accessory_Model->some("CategoryId", 1);
+        $rims        = $this->Accessory_Model->some("CategoryId", 2);
+        $storages    = $this->Accessory_Model->some("CategoryId", 4);
+        $spoilers    = $this->Accessory_Model->some("CategoryId", 3);
+
+        $this->changeMapping($bodyColours);
+        $this->changeMapping($rims);
+        $this->changeMapping($storages);
+        $this->changeMapping($spoilers);
+        
         $data = [
             "_menubar" => $this->config->item('menu_choices'),
-            "bodyColours" => $bodyColour,
-            "rims"        => $rim,
-            "storages"    => $storage,
-            "spoilers"    => $spoiler,
+            "bodyColours" => $bodyColours,
+            "rims"        => $rims,
+            "storages"    => $storages,
+            "spoilers"    => $spoilers,
         ];
+        
+
+        
+        /*
+        foreach($data as $value){
+            
+        }
+         * 
+         */
+        
+        //$data->A1 = $this->app->mapping(A1);
+        
+        /*
+        print "<pre>";
+        print_r($this->app);
+        $dataSample = $data['bodyColours'];
+        print_r($dataSample);
+        print "</pre>";
+         *
+         */
+        
+        
         if ($role == ROLE_ADMIN)
         {
             $this->render2();
@@ -63,16 +91,23 @@ class Category extends Application
         //$this->load->view('category', $data);
     }
     
-    
-    
-        public function edit($CategoryId = null)
-        {
-        if ($CategoryId == null)
-        {
-            redirect('/category');
+
+    public function changeMapping ($dataArray){
+        foreach($dataArray as $dataValue){
+            
+            $field = $this->app->mapping('cost');
+            $dataValue->Cost=$dataValue->$field;
+            
+            $field = $this->app->mapping('popularity');
+            $dataValue->Popularity=$dataValue->$field;
+            
+            $field = $this->app->mapping('quality');
+            $dataValue->Quality=$dataValue->$field;     
         }
-        $task = $this->tasks->get($CategoryId);
-        $this->session->set_userdata('task', $task);
-        $this->showit();
-        }
+        
+        return $dataArray;
+    }
+    
+
+
 }

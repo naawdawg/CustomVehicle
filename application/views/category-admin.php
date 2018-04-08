@@ -2,7 +2,6 @@
 
 <h1>Catalog - Admin</h1>
 
-<a href="/mtce/add"><input type="button" value="Add a new Item to Catalog"/></a>
 <div id="body">
     <p>List of all accessories available</p>
         
@@ -18,7 +17,7 @@
         {bodyColours}
         <tr>
             
-            <td>{AccessoryId}</td> 
+           <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
@@ -30,7 +29,7 @@
         
         {rims}
         <tr>
-            <td>{AccessoryId}</td> 
+            <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
@@ -42,7 +41,7 @@
         
         {spoilers}
         <tr>
-            <td>{AccessoryId}</td> 
+           <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
@@ -53,7 +52,7 @@
         
         {storages}
         <tr>
-            <td>{AccessoryId}</td> 
+          <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
