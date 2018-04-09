@@ -2,27 +2,31 @@
 
 <div id="body">
     <p>List of all accessories available</p>
+
     
 	<!--Color Table-->
     <table style="width:100%">
 		<h1>Color</h1>
         <tr>
-            <th></th> 
             <th align="left">Accessory Id</th> 
             <th align="left">Description</th>
             <th align="left">Cost</th>
             <th align="left">Popularity</th>
             <th align="left">Quality</th>
+            <th></th>
         </tr>
         
 		{bodyColours}
         <tr>
-            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
-            <td>{AccessoryId}</td> 
+
+            
+            <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
             <td>{Quality}</td>
+            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
+            
         </tr>
 	
 	
@@ -42,12 +46,14 @@
         </tr>
         {rims}
         <tr>
-            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
-            <td>{AccessoryId}</td> 
+            
+            <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
             <td>{Quality}</td>
+            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
+            
         </tr>
         {/rims}
     </table>
@@ -65,12 +71,12 @@
         </tr>
         {spoilers}
         <tr>
-            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
-            <td>{AccessoryId}</td> 
+            <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
             <td>{Quality}</td>
+            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
         </tr>
         {/spoilers}
     </table>
@@ -88,12 +94,12 @@
         </tr>
         {storages}
         <tr>
-            <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
-            <td>{AccessoryId}</td> 
+            <td><a href="/category/edit/{AccessoryId}"><input type="button" value="{AccessoryId}"/></a></td>
             <td>{Description}</td>
             <td>{Cost}</td>
             <td>{Popularity}</td>
             <td>{Quality}</td>
+          <td><img class="myImg" src="{Path}" alt='{Description}' style="width:200px"></td>
         </tr>
         {/storages}
     </table>
