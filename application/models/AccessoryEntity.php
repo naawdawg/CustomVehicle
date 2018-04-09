@@ -109,15 +109,18 @@ class AccessoryEntity extends Entity{
         $this->Quality = $quality;
     }
 
-    public function rules()
-    {
+        public function rules()
+        {
         $config = array(
-            ['field' => 'task', 'label' => 'TODO task', 'rules' => 'alpha_numeric_spaces|max_length[64]'],
-            ['field' => 'priority', 'label' => 'Priority', 'rules' => 'integer|less_than[4]'],
-            ['field' => 'size', 'label' => 'Task size', 'rules' => 'integer|less_than[4]'],
-            ['field' => 'group', 'label' => 'Task group', 'rules' => 'integer|less_than[5]'],
+            ['field' => 'description', 'label' => 'Description', 'rules' => 'alpha_numeric_spaces|max_length[64]'],
+            ['field' => 'cost', 'label' => 'Cost', 'rules' => 'integer|less_than[11]'],
+            ['field' => 'popularity', 'label' => 'Popularity', 'rules' => 'integer|less_than[11]'],
+            ['field' => 'quality', 'label' => 'Quality', 'rules' => 'integer|less_than[11]'],
         );
-        return $config;
+             return $config;
+        }
+        
+      public function __get($key) {
+        return $this->$key;
     }
-
 }
