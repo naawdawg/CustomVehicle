@@ -18,10 +18,16 @@ class Accessory_Model extends CSV_Model {
         function __construct()
 	{
             parent::__construct('../data/Accessory.csv', 'AccessoryId', 'AccessoryEntity');
+        } 
+        
+    public function rules()
+        {
+        $config = array(
+            ['field' => 'description', 'label' => 'Description', 'rules' => 'alpha_numeric_spaces|max_length[64]'],
+            ['field' => 'cost', 'label' => 'Cost', 'rules' => 'integer|less_than[11]'],
+            ['field' => 'popularity', 'label' => 'Popularity', 'rules' => 'integer|less_than[11]'],
+            ['field' => 'quality', 'label' => 'Quality', 'rules' => 'integer|less_than[11]'],
+        );
+             return $config;
         }
-    
-    
-    
-    
-    
 }
