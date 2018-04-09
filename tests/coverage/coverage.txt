@@ -1,0 +1,14 @@
+
+
+Code Coverage Report:    
+  2018-04-08 22:11:08    
+                         
+ Summary:                
+  Classes: 11.11% (1/9)  
+  Methods:  3.23% (1/31) 
+  Lines:   24.29% (17/70)
+
+@Accessory::Accessory_Model
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+AccessoryEntity
+  Methods:   0.00% ( 0/12)   Lines:  41.67% ( 15/ 36)
